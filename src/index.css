@@ -25,9 +25,6 @@ html
 
 body
 {
-  background: url("assets/images/background.jpg") no-repeat 50% 50%;
-  background-size: cover;
-
   font-family: 'Andale Mono';
   font-weight: normal;
   font-style: normal;
@@ -84,10 +81,10 @@ p
 {
   content: "";
   position: absolute;
-  bottom: 2px;
+  bottom: 1px;
   left: 0;
   right: 0;
-  height: 2px;
+  height: 1px;
   background-color: #fefefe;
 }
 
@@ -182,12 +179,87 @@ p
 }
 
 
+/*
+ *
+ * Background
+ *
+ */
+
+.background
+{
+  position: absolute;
+}
+
+.background.fullscreen
+{
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.background .background-filter,
+.background .background-image
+{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+.background .background-image
+{
+  z-index: 0;
+}
+
+.background .background-filter
+{
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+  z-index: 0;
+}
+
+.background-center
+{
+  background-position: 50% 50%;
+}
+
+.background-cover
+{
+  background-size: cover;
+}
+
+.attribution
+{
+  position: absolute;
+
+  bottom: 2.5vh;
+  left: 0;
+  right: 0;
+}
+
+.attribution p
+{
+  color: rgba(255, 255, 255, 0.3);
+  text-align: center;
+}
+
+.attribution p:first-child
+{
+  padding-bottom: 1em;
+}
+
+
 .container
 {
   display: flex;
+
   flex-direction: column;
+  -webkit-flex-direction: column;
+
   align-items: center;
+  -webkit-align-items: center;
+
   justify-content: center;
+  -webkit-justify-content: center;
 
   width: auto;
 }
@@ -201,6 +273,7 @@ p
 .card
 {
   backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
 
   background: rgba(25, 25, 25, 0);
 
@@ -249,23 +322,17 @@ p
   width: 150px;
 }
 
-.attribution
-{
-  position: absolute;
+/*
+ *
+ * Sections
+ *
+ */
 
-  bottom: 5vh;
-  left: 0;
-  right: 0;
-}
+/* Index */
 
-.attribution p
+.index-background .background-image
 {
-  color: rgba(255, 255, 255, 0.3);
-  text-align: center;
-}
-
-.attribution p:first-child
-{
-  padding-bottom: 1em;
+  background: url("assets/images/background.jpg") no-repeat 50% 50%;
+  background-size: cover;
 }
 
