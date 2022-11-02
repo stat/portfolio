@@ -16,8 +16,8 @@ from './interface';
 
 export interface IAttributionOptions extends IComponentOptions
 {
-  description:string;
-  owner:string;
+  description?:string;
+  owner?:string;
 }
 
 export default function Attribution(props:IAttributionOptions)
@@ -27,8 +27,15 @@ export default function Attribution(props:IAttributionOptions)
 
   return (
     <div className={classnames('attribution container', props.className)}>
-      <p>Picture by: {owner.toJSXString()}</p>
-      <p>{description.toJSXString()}</p>
+      {
+        owner &&
+          <p>Photograph by:<br/>{owner.toJSXString()}</p>
+      }
+
+      {
+        description &&
+          <p>{description.toJSXString()}</p>
+      }
     </div>
   );
 }

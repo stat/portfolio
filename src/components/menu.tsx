@@ -26,7 +26,7 @@ export class Menu extends React.Component
   render()
   {
     return (
-      <div></div>
+      <div id='menu'></div>
     );
   }
 }
